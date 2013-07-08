@@ -1,0 +1,45 @@
+<?php
+$title = 'User';
+$this->headTitle($title);
+?>
+
+<?php if ($form = $this->form) {?>
+
+<script src="js/main.js"></script>
+<div id="content" class="row">
+    <h2><?php echo $this->escapeHtml($title); ?></h2>
+    <p><a href="#login-form-modal">Login</a></p>
+    <p><a href="<?php echo $this->url('register');?>">Registration</a></p>
+</div>
+<div id="login-form-modal" class="form-modal form-box span6">
+<?php
+$form->setAttribute('action', $this->url('login'));
+$form->setAttribute('class','form-horizontal');
+$form->setAttribute('id','login-form');
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+    <legend>Sign in</legend>
+    <div class="control-group">
+        <label class="control-label" for="login">Login</label>
+        <div class="controls">
+            <?php echo $this->formRow($form->get('login')); ?>
+            <span class="help-inline"></span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+            <?php echo $this->formRow($form->get('password')); ?>
+            <span class="help-inline"></span>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <?php echo $this->formSubmit($form->get('submit'));?>
+        </div>
+    </div>
+<?php echo $this->form()->closeTag();?>
+</div>
+
+<?php };?>
