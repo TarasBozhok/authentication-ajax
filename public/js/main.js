@@ -27,7 +27,7 @@ jQuery(function($) {
                 alert: 'Invalid characters entered'
             }
         ]
-    };
+    }; 
 
 
 
