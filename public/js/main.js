@@ -106,7 +106,7 @@ jQuery(function($) {
      */
     $form.on('submit', function(e) {
         var isValid = true,
-            ajaxUrl = $form.action; //our controller action which handle AJAX request
+            ajaxUrl = $form.action;
 
         e.preventDefault();
 
